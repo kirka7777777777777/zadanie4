@@ -8,6 +8,12 @@ export default createStore({
     isAuthenticated: (state) => !!state.token,
   },
   mutations: {
+    AUTH_SUCCESS: (state, token) => {
+      state.token = token;
+    },
+    AUTH_ERROR: (state) => {
+      state.token = '';
+    },
   },
   actions: {
     AUTH_REQUEST: ({ commit}, user) => {
